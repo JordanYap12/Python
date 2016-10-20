@@ -3,15 +3,15 @@ import time
 """link = open("stopwords.txt")
 lines = link.readlines()"""
 
-txt_file = open('stopwords.txt','r')
+txt_file = open('stopwords.txt','r+')
 stopwords = txt_file.read()
 txt_file.close()
 
-happy_file = open('PositiveWords.txt', 'r')
+happy_file = open('PositiveWords.txt', 'r+')
 happyWords = happy_file.read()
 happy_file.close()
 
-sad_file = open('NegativeWords.txt', 'r')
+sad_file = open('NegativeWords.txt', 'r+')
 sadWords = sad_file.read()
 sad_file.close()
 
@@ -82,18 +82,41 @@ feeling_word = [getHappyWord(indivdual_word), getSadWord(indivdual_word)]
 
 
 while True:
-	if getHappyWord in feeling_word:
+	if getHappyWord in feeling_word is True :
 		print(random_happyResponse)
+
+
+
 
 	elif getSadWord in feeling_word:
 		print(random_SadResponse)
+	
+
+	else:
+		break
+
+	
+
+time.sleep(1)
+print "Sooo " + interesting_word + ", is it okay to ask you some questions?"
+
+"""while True:
+	userInput = raw_input(" ")
+	if userInput in secondUserResponse
+	print(random_continueResponse)
+		time.sleep(2)
+		colour = raw_input('What is your favourite colour?')
+		print "Oh so it\'s %s?" % (colour)
+		time.sleep(1)
+		print(random_colorResponse)  """
 
 
 
 
 
-"""
-while True:
+
+
+"""while True:
 	userInput = raw_input(">>> ")
 	if userInput in greetings:
 		print(random_greeting)
@@ -129,6 +152,6 @@ while True:
 
 	
 	else:
-		print("I did not understand what you said") 
-		"""
+		print("I did not understand what you said")""" 
+		
 
