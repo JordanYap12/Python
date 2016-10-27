@@ -1,5 +1,6 @@
 import random
 import time
+import wikipedia 
 """link = open("stopwords.txt")
 lines = link.readlines()"""
 
@@ -62,6 +63,12 @@ def getSadWord(sad):
 		if word.lower() in sadWords:
 			print(random_SadResponse)
 
+def getWikipedia(wiki):
+	for word in wiki:
+		if word.lower() not in stopwords:
+			print wikipedia.summary(word, sentences = 1)
+
+
 
 
 bot_greeting = raw_input("Hello whats is your name?")
@@ -98,7 +105,33 @@ while True:
 	
 
 time.sleep(1)
-print "Sooo " + interesting_word + ", is it okay to ask you some questions?"
+print ("Sooo " + interesting_word)
+
+bot_wikiQuestion = raw_input("Tell me something to search for you:  ")
+indivdual_word = bot_wikiQuestion.split(" ")
+search_word = getWikipedia(indivdual_word)
+
+
+
+time.sleep(1)
+
+print ("Sooo " + interesting_word + " can I ask you some questions")
+
+"""while True: 
+	userInput = raw_input("--")
+	if userInput in secondUserResponse:
+		print(random_continueResponse)
+		colour = raw_input('What is your favourite colour?')
+		print "Oh so it\'s %s?" % (colour)
+		time.sleep(1)
+		print(random_colorResponse)
+
+	elif userInput in awksUserResponse:
+		print(awksBotResponse)"""
+
+
+
+
 
 """while True:
 	userInput = raw_input(" ")
@@ -116,7 +149,7 @@ print "Sooo " + interesting_word + ", is it okay to ask you some questions?"
 
 
 
-"""while True:
+while True:
 	userInput = raw_input(">>> ")
 	if userInput in greetings:
 		print(random_greeting)
@@ -152,6 +185,6 @@ print "Sooo " + interesting_word + ", is it okay to ask you some questions?"
 
 	
 	else:
-		print("I did not understand what you said")""" 
+		print("I did not understand what you said")
 		
 
