@@ -178,7 +178,9 @@ while True:
 		colour = raw_input('What is your favourite colour?')
 		print "Oh so it\'s %s?" % (colour)
 		time.sleep(1)
-		print(random_colorResponse)  
+		print(random_colorResponse)
+		time.sleep(1)
+		print "This chat has been fun, but I better go byeeeeee"  
 
 
 
